@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f3eff7">
+    <meta name="description" content="Convierte texto a código Morse o descifra un mensaje Morse.">
+    <title>Traductor de código Morse</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio"><span class="brand-signal" aria-hidden="true"><i></i><i></i><i></i></span> Morse<span class="brand-period">.</span></a>
+      </header>
+      <section class="intro" id="inicio">
+        <p class="eyebrow"><span>01</span> CONVERSOR DE MENSAJES</p>
+        <h1>Traductor de código <span>Morse</span></h1>
+        <p>Convierte un mensaje o descifra una señal, en ambos sentidos.</p>
+      </section>
+      <section class="translator" aria-label="Conversor Morse">
+        <div class="translator-topline">
+          <div class="mode-control" role="group" aria-label="Tipo de conversión">
+            <button class="mode-button is-active" type="button" data-mode="text-to-morse" aria-pressed="true">Texto → Morse</button>
+            <button class="mode-button" type="button" data-mode="morse-to-text" aria-pressed="false">Morse → Texto</button>
+          </div>
+          <span class="mode-index" id="mode-index">Modo 1 de 2</span>
+        </div>
+        <div class="work-area">
+          <div class="pane">
+            <div class="pane-heading"><label for="source-text" id="source-label">Texto de entrada</label><span class="char-count" id="char-count">0 / 500</span></div>
+            <textarea id="source-text" maxlength="500" placeholder="Escribe un texto…" aria-describedby="input-hint error-message"></textarea>
+            <div class="pane-foot"><span class="input-hint" id="input-hint">Letras, números y signos comunes</span>
+            <button class="text-button" type="button" id="clear-button">Limpiar</button></div>
+          <p class="validation-note">Las tildes se convierten a letras sin acento.</p>
+          <p class="error-message" id="error-message" role="alert" aria-live="polite"></p>
+          </div>
+          <div class="convert-rail" aria-hidden="true"><span></span>↓</div>
+          <div class="pane">
+            <div class="pane-heading"><span id="result-label">Resultado en Morse</span><span>RESULTADO</span></div>
+            <textarea id="result-text" readonly placeholder="El resultado aparecerá aquí…" aria-label="Resultado de la conversión" aria-live="polite"></textarea>
+            <div class="pane-foot"><span class="output-hint" id="output-hint">Separa letras con espacios y palabras con /</span><button class="copy-button" type="button" id="copy-button" disabled>Copiar</button></div>
+          </div>
+        </div>
+        <div class="translator-bottomline">
+          <button class="convert-button" type="button" id="convert-button"><span id="convert-label">Convertir a Morse</span></button>
+        </div>
+      </section>
+    </main>
+    <script src="./dist/bundle.js"></script>
+  </body>
+</html>

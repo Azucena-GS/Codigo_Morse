@@ -1,0 +1,83 @@
+:root {
+  font-family: 'Aptos', 'Segoe UI', sans-serif;
+  color: #352d3d;
+  background: #f3eff7;
+  --line: #e1d9e8;
+  --muted: #766c80;
+  --primary: #705489;
+  --accent: #9878a8;
+  --surface: #fff;
+}
+
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; background-color: #f3eff7; background-image: radial-gradient(#e4dce9 0.7px, transparent 0.7px); background-size: 22px 22px; }
+button, textarea { font: inherit; }
+.page-shell { width: min(100% - 48px, 960px); margin: 0 auto; }
+.topbar { height: 72px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.brand { display: inline-flex; align-items: center; gap: 9px; color: #352d3d; font-size: 20px; font-weight: 700; text-decoration: none; }
+.brand-period { color: var(--accent); }
+.brand-signal { height: 18px; display: flex; align-items: center; gap: 3px; }
+.brand-signal i { width: 4px; height: 4px; border-radius: 50%; background: var(--primary); }
+.brand-signal i:nth-child(2) { width: 13px; height: 4px; border-radius: 4px; }
+.header-note { display: flex; align-items: center; gap: 8px; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #9b80ad; }
+.intro { padding: 42px 0 28px; }
+.eyebrow { margin: 0 0 12px; color: var(--muted); font-size: 10px; font-weight: 700; }
+.eyebrow span { margin-right: 7px; color: var(--accent); }
+h1 { margin: 0; color: #382d43; font-size: 42px; font-weight: 650; line-height: 1.16; }
+h1 span { color: var(--primary); }
+.intro > p:last-child { margin: 11px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.translator { overflow: hidden; border: 1px solid #ded2e7; border-radius: 7px; background: #f8f4fb; box-shadow: 0 9px 26px rgba(91, 65, 116, .07); }
+.translator-topline, .translator-bottomline { min-height: 62px; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; }
+.translator-topline { border-bottom: 1px solid var(--line); }
+.mode-control { display: inline-flex; }
+.mode-button { padding: 9px 13px; border: 1px solid #ded5e5; background: #faf8fc; color: #5b5064; cursor: pointer; font-size: 12px; transition: background .16s ease, color .16s ease; }
+.mode-button + .mode-button { border-left: 0; }
+.mode-button:first-child { border-radius: 4px 0 0 4px; }
+.mode-button:last-child { border-radius: 0 4px 4px 0; }
+.mode-button.is-active { border-color: var(--primary); background: var(--primary); color: #fff; }
+.mode-button:focus-visible, button:focus-visible { outline: 2px solid #a17eb4; outline-offset: 2px; }
+.mode-index { color: var(--muted); font-size: 11px; }
+.work-area { min-height: 238px; display: grid; grid-template-columns: 1fr 48px 1fr; align-items: stretch; padding: 22px; }
+.pane { min-width: 0; display: flex; flex-direction: column; }
+.pane-heading { min-height: 24px; display: flex; justify-content: space-between; align-items: center; gap: 8px; color: #55485d; font-size: 11px; font-weight: 700; }
+.char-count { color: var(--muted); font-weight: 400; white-space: nowrap; }
+textarea { width: 100%; min-height: 125px; flex: 1; resize: vertical; padding: 12px; border: 1px solid #ded6e5; border-radius: 4px; background: #fdfbfe; color: #382d43; font-size: 15px; line-height: 1.55; transition: border-color .16s ease, box-shadow .16s ease; }
+textarea:focus-visible { border-color: var(--primary); outline: 0; box-shadow: 0 0 0 3px rgba(112, 84, 137, .14); }
+#result-text { background: #f6f1fa; color: #5e4575; font-family: 'Courier New', monospace; font-size: 14px; }
+textarea::placeholder { color: #9f95a8; font-size: 14px; }
+.pane-foot { min-height: 34px; display: flex; justify-content: space-between; gap: 10px; align-items: center; padding-top: 6px; }
+.input-hint, .output-hint { color: var(--muted); font-size: 11px; }
+.text-button, .copy-button { padding: 6px 8px; border: 0; border-radius: 3px; background: transparent; color: var(--primary); cursor: pointer; font-size: 11px; font-weight: 600; white-space: nowrap; }
+.text-button:hover, .copy-button:not(:disabled):hover { background: #f0eaf5; }
+#clear-button { background: #eee6f4; color: #624b77; }
+#clear-button:hover { background: #e3d8ed; }
+.copy-button:disabled { color: #b2a9ba; cursor: not-allowed; }
+.error-message { min-height: 18px; margin: 4px 0 0; color: #aa3e31; font-size: 12px; }
+.convert-rail { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: var(--accent); }
+.convert-rail span { width: 1px; height: 48px; background: #ded7e4; }
+.translator-bottomline { min-height: 74px; border-top: 1px solid var(--line); }
+.validation-note { margin: 0; color: var(--muted); font-size: 12px; }
+.convert-button { min-height: 40px; padding: 0 15px; border: 1px solid #604576; border-radius: 4px; background: var(--primary); color: #fff; cursor: pointer; font-size: 13px; font-weight: 600; transition: background .16s ease, transform .16s ease; }
+.convert-button:hover { background: #604576; transform: translateY(-1px); }
+.signal-strip { min-height: 66px; display: flex; align-items: center; gap: 18px; margin-top: 22px; padding: 0 18px; border: 1px solid var(--line); border-radius: 5px; background: rgba(255, 255, 255, .78); color: #655b6d; font-size: 12px; }
+.signal-strip strong { color: var(--primary); font: 600 16px 'Courier New', monospace; }
+.footer { padding: 18px 0 25px; color: var(--muted); font-size: 11px; }
+
+@media (max-width: 700px) {
+  .page-shell { width: min(100% - 28px, 540px); }
+  .topbar { height: 62px; }
+  .intro { padding: 29px 0 20px; }
+  h1 { font-size: 30px; }
+  .translator-topline { min-height: 56px; padding: 0 12px; }
+  .mode-button { padding: 8px 9px; font-size: 11px; }
+  .mode-index { font-size: 10px; }
+  .work-area { grid-template-columns: 1fr; gap: 4px; padding: 14px 12px; }
+  .pane { min-height: 145px; }
+  .convert-rail { height: 30px; flex-direction: row; }
+  .convert-rail span { width: auto; height: 1px; flex: 1; }
+  .translator-bottomline { min-height: 78px; gap: 8px; padding: 11px 12px; }
+  .validation-note { max-width: 52%; font-size: 11px; line-height: 1.4; }
+  .convert-button { padding: 0 10px; font-size: 11px; }
+  .signal-strip { min-height: 58px; gap: 12px; }
+}
